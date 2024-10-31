@@ -15,7 +15,7 @@ import {
 } from "./components/ui/sheet";
 import { Button } from "./components/ui/button";
 
-import { AlignJustify, ArrowRight } from "lucide-react";
+import { AlignJustify, ArrowRight, Quote } from "lucide-react";
 import bannerimagem from "@/assets/postobanner1.png";
 import {
   Carousel,
@@ -23,12 +23,40 @@ import {
   CarouselContent,
   CarouselItem,
 } from "./components/ui/carousel";
-import React from "react";
+import React, { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
 import bannerimagem2 from "@/assets/banner2.png";
 import postolocal from "@/assets/PostoIargars.jpg";
 import sobrefoto from "@/assets/sobrefoto.jpg";
+import clientes1 from "@/assets/clientes.jpg";
+import clientes2 from "@/assets/clientes2.jpg";
+import mulher from "@/assets/mulher.jpg";
+import homem from "@/assets/homem.jpg";
+import banner2 from "@/assets/banner22.jpg";
+import servico from "@/assets/bombas.jpg";
+
+import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
+
+const testimonials = [
+  {
+    image: clientes2,
+    quote:
+      "Atendimento excelente todos muitos atenciosa desde donos como os funcionários so abasteço nesse posto parabéns pra eles pele dedicação com os crientes.",
+    avatar: mulher,
+    name: "Iraci Moreira",
+  },
+  {
+    image: clientes1,
+    quote:
+      "Excelente serviço e equipe super atenciosa. Fico muito satisfeito em abastecer aqui.",
+    avatar: homem,
+    name: "Carlos Nunes",
+  },
+  // Adicione outros depoimentos aqui
+];
 
 function App() {
   const links = [
@@ -41,20 +69,40 @@ function App() {
     Autoplay({ delay: 4000, stopOnInteraction: false })
   );
 
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Função para navegar entre os depoimentos
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex: number) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex: number) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const { image, quote, avatar, name } = testimonials[currentIndex];
+
   return (
     <>
       <header className="flex flex-col w-full h-auto bg-yellow-300">
-        <div className="h-auto w-full flex justify-end py-3 px-4 relative">
+        <div className="h-auto w-full flex justify-end py-3 md:py-5 px-4 relative">
           <img
             src={logo}
             alt=""
-            className="h-[60px] w-auto absolute left-4 top-[0]"
+            className="h-[60px] md:h-[80px] w-auto absolute left-4 top-[0]"
           />
           <NavigationMenu className="w-full">
             <NavigationMenuList className="gap-3">
               {links.map((link) => (
                 <NavigationMenuItem>
-                  <a href="" className="text-blue-900 font-semibold hidden">
+                  <a
+                    href=""
+                    className="text-blue-900 font-semibold hidden md:block"
+                  >
                     {link}
                   </a>
                 </NavigationMenuItem>
@@ -63,7 +111,7 @@ function App() {
             <Sheet>
               <SheetTrigger asChild>
                 <button>
-                  <AlignJustify className="text-blue-900" />
+                  <AlignJustify className="text-blue-900 md:hidden" />
                 </button>
               </SheetTrigger>
               <SheetContent className="bg-yellow-300">
@@ -90,9 +138,15 @@ function App() {
         <section className="w-full bg-yellow-400">
           <Carousel plugins={[plugin.current]}>
             <CarouselContent>
-              <CarouselItem>
+              <CarouselItem className="md:max-h-[720px] ">
                 <img
+                  className="md:hidden m"
                   src={bannerimagem2}
+                  alt="Banner contendo uma foto dos posto e texto escrito posto largas muito mais que um posto uma parada completa pra voce"
+                />
+                <img
+                  className="hidden md:block object-contain "
+                  src={banner2}
                   alt="Banner contendo uma foto dos posto e texto escrito posto largas muito mais que um posto uma parada completa pra voce"
                 />
               </CarouselItem>
@@ -150,7 +204,7 @@ function App() {
           </Button>
         </section>
         <section
-          className="w-full bg-cover bg-no-repeat bg-fixed bg-center h-auto p-10 flex flex-col items-center gap-3"
+          className="w-full bg-cover bg-no-repeat bg-fixed bg-center bg-[#00000080] h-auto p-10 flex flex-col items-center gap-3"
           style={{
             backgroundBlendMode: "overlay",
             backgroundImage: `url(${sobrefoto})`,
@@ -172,13 +226,72 @@ function App() {
             </a>
           </Button>
         </section>
-        <section>
-          <span>Depoimentos</span>
-          <h2>O que nossos clientes dizem</h2>
-          <p>
-            Here are what some of our amazing customers are saying about our
-            marketing professionals. Lorem ipsum dolor sit amet
+        <section className="flex flex-col py-10 px-4 h-full items-center gap-6">
+          <span className="text-yellow-500 font-bold">Depoimentos</span>
+          <h2 className="text-blue-900 text-3xl text-center font-bold">
+            O que Nossos Clientes Dizem
+          </h2>
+          <p className="text-center font-semibold text-slate-800">
+            Eis o que alguns dos nossos fantásticos clientes estão a dizer sobre
+            os nossos serviços.
           </p>
+          <div className="w-[80%] h-auto relative">
+            <img
+              src={image}
+              alt=""
+              className="w-full min-h-[300px] flex-shrink-0 object-cover rounded-sm"
+            />
+            <div className="flex gap-3 items-center justify-evenly bg-slate-300 h-[50px] w-auto p-3 rounded-tl-sm absolute bottom-0 right-0">
+              <button
+                onClick={handlePrevious}
+                className="rounded-full bg-blue-900 text-white p-2"
+              >
+                <ChevronLeftIcon className="h-4 w-4" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="rounded-full bg-blue-900 text-white p-2"
+              >
+                <ChevronRightIcon className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="relative items-center mb-4">
+              <ImQuotesLeft className="absolute left-0 top-0 text-yellow-500" />
+              <p className="text-blue-950 text-center w-full px-[4%]">
+                {quote}
+              </p>
+              <ImQuotesRight className="absolute right-0 bottom-0 text-yellow-300" />
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <Avatar className="h-[60px] w-[60px]">
+                <AvatarImage src={avatar} className="object-cover " />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <span className="text-yellow-500 text-xl font-bold">{name}</span>
+            </div>
+          </div>
+        </section>
+        <section
+          className="w-full h-auto flex flex-col gap-10 bg-cover bg-[#00000080] py-8 px-4"
+          style={{
+            backgroundBlendMode: "overlay",
+            backgroundImage: `url(${servico})`,
+          }}
+        >
+          <h2 className="text-3xl text-white font-bold">Nossos Serviços</h2>
+          <p className="text-white text-lg font-semibold">
+            O Posto Iargas valoriza a excelência e a diversidade em seus
+            produtos, buscando continuamente o aprimoramento dos serviços
+            oferecidos. Tudo isso para garantir a plena satisfação de seus
+            clientes.
+          </p>
+          <Button variant="outline" className="rounded-3xl">
+            <a href="#" className="text-blue-900">
+              Conhecer Serviços
+            </a>
+          </Button>
         </section>
       </main>
     </>
