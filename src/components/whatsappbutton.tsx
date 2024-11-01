@@ -11,13 +11,9 @@ export function ButtonWhatsApp() {
     <>
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger className="fixed bottom-10 right-10">
+          <TooltipTrigger className="fixed bottom-10 right-10 z-10">
             <a href="https://api.whatsapp.com/send?phone=5541987225498&text=Ola">
-              <img
-                src={icon}
-                alt="logo whatsapp"
-                className="max-h-[40px] z-10"
-              />
+              <img src={icon} alt="logo whatsapp" className="max-h-[40px]" />
             </a>
           </TooltipTrigger>
           <TooltipContent side="top" align="center">

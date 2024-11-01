@@ -27,20 +27,17 @@ function Footer() {
         </div>
         <div className="flex items-center gap-1 font-bold">
           <img src={ArrowRight} alt="Ícone de seta para a direita" />
-          <a href="#" className="hover:translate-x-1 transition-all">
+          <a href="/about" className="hover:translate-x-1 transition-all">
             Sobre Nós
           </a>
         </div>
         <div className="flex items-center gap-1 font-bold">
           <img src={ArrowRight} alt="Ícone de seta para a direita" />
-          <a href="#" className="hover:translate-x-1 transition-all">
+          <a
+            href="/products-services"
+            className="hover:translate-x-1 transition-all"
+          >
             Serviços
-          </a>
-        </div>
-        <div className="flex items-center gap-1 font-bold">
-          <img src={ArrowRight} alt="Ícone de seta para a direita" />
-          <a href="#" className="hover:translate-x-1 transition-all">
-            Conveniência
           </a>
         </div>
       </div>
