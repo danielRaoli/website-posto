@@ -24,7 +24,7 @@ interface Link {
 function Navbar() {
   const links: Link[] = [
     { label: "Sobre Nós", path: "/about" },
-    { label: "Produtos e Serviços", path: "/produtcs" },
+    { label: "Produtos e Serviços", path: "/products-services" },
     { label: "Conveniência", path: "/store" },
   ];
 
