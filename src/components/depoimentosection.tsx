@@ -8,12 +8,13 @@ import mulher from "@/assets/mulher.jpg";
 import homem from "@/assets/homem.jpg";
 
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const testimonials = [
   {
     image: clientes2,
     quote:
-      "Atendimento excelente todos muitos atenciosa desde donos como os funcionários so abasteço nesse posto parabéns pra eles pele dedicação com os crientes.",
+      "Atendimento excelente todos muitos atenciosa desde donos como os funcionários so abasteço nesse posto parabéns pra eles pela dedicação com os clientes.",
     avatar: mulher,
     name: "Iraci Moreira",
   },
@@ -28,6 +29,8 @@ const testimonials = [
 ];
 
 export function DepoimentosSection() {
+  const { ref: depoimento, inView: depoimentoSectionVisible } = useInView();
+
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // Função para navegar entre os depoimentos
@@ -47,7 +50,15 @@ export function DepoimentosSection() {
 
   return (
     <>
-      <section className="flex flex-col w-full px-5 py-10 gap-4 md:py-20 md:px-20 h-full items-center md:justify-center md:items-start md:gap-6">
+      <section
+        id="depoimento"
+        ref={depoimento}
+        className={`flex flex-col w-full px-5 py-10 gap-4 md:py-20 md:px-20 h-full items-center md:justify-center md:items-start md:gap-6 transition-all duration-300 delay-300  ${
+          depoimentoSectionVisible
+            ? "opacity-1 translate-x-0"
+            : "-translate-x-20 opacity-0"
+        }`}
+      >
         <div className=" md:w-[50%]  flex items-center flex-col md:items-start gap-4">
           <span className="text-yellow-500 font-bold md:text-2xl">
             Depoimentos

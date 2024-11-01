@@ -7,7 +7,10 @@ import ArrowRight from "../assets/arrow-right.svg";
 
 function Footer() {
   return (
-    <footer className="flex flex-col items-center gap-4 bg-yellow-300 text-blue-900 ">
+    <footer
+      id="contato"
+      className="flex flex-col items-center gap-4 bg-yellow-300 text-blue-900 "
+    >
       <img
         src={logotipo}
         alt="Logotipo do Posto"
@@ -45,7 +48,7 @@ function Footer() {
       <div className="flex flex-col gap-2 items-center md:flex-row">
         <p className="font-black">FALE CONOSCO</p>
         <div className="flex items-center gap-1 font-bold">
-         <img src={telephoneIcon} alt="Ícone telefone" />
+          <img src={telephoneIcon} alt="Ícone telefone" />
           <p>(41) 3623-2259 | </p>
         </div>
         <div className="flex items-center gap-1 font-bold">

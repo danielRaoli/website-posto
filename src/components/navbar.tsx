@@ -1,8 +1,10 @@
 import { AlignJustify } from "lucide-react";
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import {
   Sheet,
@@ -15,6 +17,7 @@ import {
 import { Button } from "./ui/button";
 
 import logo from "@/assets/logo-iargas.png";
+import { Link } from "react-router-dom";
 
 interface Link {
   label: string;
@@ -23,9 +26,9 @@ interface Link {
 
 function Navbar() {
   const links: Link[] = [
+    { label: "Início", path: "/" },
     { label: "Sobre Nós", path: "/about" },
     { label: "Produtos e Serviços", path: "/products-services" },
-    { label: "Conveniência", path: "/store" },
   ];
 
   return (
@@ -33,17 +36,53 @@ function Navbar() {
       <div className="h-auto w-full flex justify-between py-2 px-4 md:px-10 relative">
         <img src={logo} alt="" className="h-[45px] w-auto" />
         <NavigationMenu className="w-full">
-          <NavigationMenuList className="gap-3">
-            {links.map((link) => (
-              <NavigationMenuItem>
-                <a
-                  className="text-blue-900 font-semibold hidden md:block"
-                  href={link.path}
-                >
-                  {link.label}
-                </a>
-              </NavigationMenuItem>
-            ))}
+          <NavigationMenuList className="gap-7">
+            {links.map((link) =>
+              link.label === "Início" ? (
+                <NavigationMenuItem className="hidden md:flex">
+                  <NavigationMenuTrigger className="bg-transparent text-blue-900 font-semibold text-lg">
+                    {link.label}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="px-10 py-4 bg-yellow-300 border-none">
+                    <ul className="flex flex-col gap-3">
+                      <li>
+                        <a
+                          className="text-blue-900 font-semibold hidden md:block"
+                          href="#local"
+                        >
+                          Localização
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-blue-900 font-semibold hidden md:block"
+                          href="#depoimento"
+                        >
+                          Depoimentos
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-blue-900 font-semibold hidden md:block"
+                          href="#contato"
+                        >
+                          Contato
+                        </a>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ) : (
+                <NavigationMenuItem>
+                  <a
+                    className="text-blue-900 font-semibold hidden md:block transition-all hover:scale-110"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                </NavigationMenuItem>
+              )
+            )}
           </NavigationMenuList>
           <Sheet>
             <SheetTrigger asChild>

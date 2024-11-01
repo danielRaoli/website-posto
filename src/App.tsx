@@ -4,16 +4,21 @@ import AboutPage from "./pages/about-page";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import ProductsAndServicesPage from "./pages/products-services-page";
+import { ButtonWhatsApp } from "./components/whatsappbutton";
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
+        <ButtonWhatsApp />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/products-services" element={<ProductsAndServicesPage />} />
+          <Route
+            path="/products-services"
+            element={<ProductsAndServicesPage />}
+          />
         </Routes>
         <Footer />
       </Router>

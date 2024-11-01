@@ -9,12 +9,14 @@ import Autoplay from "embla-carousel-autoplay";
 import postolocal from "@/assets/PostoIargars.jpg";
 import postolocal2 from "@/assets/localposto.jpg";
 import { Button } from "./ui/button";
+import { useInView } from "react-intersection-observer";
 
 export function LocalSection() {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: false })
   );
 
+  const { ref: local, inView: localSectionVisible } = useInView();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -28,7 +30,13 @@ export function LocalSection() {
 
   return (
     <>
-      <section className="py-10 px-4 md:px-20 w-full flex flex-col items-center">
+      <section
+        id="local"
+        ref={local}
+        className={`py-10 px-4 md:px-20 w-full flex flex-col items-center transition duration-300 delay-300  ${
+          localSectionVisible ? "opacity-1" : "opacity-0"
+        }`}
+      >
         <h2 className="text-3xl md:text-4xl text-blue-950 text-center font-semibold mb-4">
           Encontre Nosso Posto
         </h2>

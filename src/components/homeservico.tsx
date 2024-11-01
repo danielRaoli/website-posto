@@ -1,15 +1,20 @@
-import servico from "@/assets/bombas.jpg";
+import servicoimg from "@/assets/bombas.jpg";
 
 import { Button } from "../components/ui/button";
+import { useInView } from "react-intersection-observer";
 
 export function HomeServico() {
+  const { ref: servico, inView: servicoSectionVisible } = useInView();
   return (
     <>
       <section
-        className="w-full h-auto flex flex-col gap-10 bg-cover bg-[#000000a6] py-14 px-6 md:p-24"
+        ref={servico}
+        className={`w-full h-auto flex flex-col gap-10 bg-cover bg-[#000000a6] py-14 px-6 md:p-24 transition-all delay-300 ${
+          servicoSectionVisible ? "opacity-1" : "opacity-0"
+        }`}
         style={{
           backgroundBlendMode: "overlay",
-          backgroundImage: `url(${servico})`,
+          backgroundImage: `url(${servicoimg})`,
         }}
       >
         <h2 className="text-3xl text-white font-bold md:text-4xl">

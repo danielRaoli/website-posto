@@ -1,12 +1,17 @@
 import logo from "@/assets/logo-iargas.png";
 import sobrefoto from "@/assets/sobrefoto.jpg";
 import { Button } from "./ui/button";
+import { useInView } from "react-intersection-observer";
 
 export function HomeSobre() {
+  const { ref: sobre, inView: sobreSectionVisible } = useInView();
   return (
     <>
       <section
-        className="w-full bg-cover bg-no-repeat bg-fixed bg-center bg-[#000000b4] h-auto py-14 px-10 md:py-20 flex flex-col items-center gap-10 md:gap-10"
+        ref={sobre}
+        className={`w-full bg-cover bg-no-repeat bg-fixed bg-center bg-[#000000b4] h-auto py-14 px-10 md:py-20 flex flex-col items-center gap-10 md:gap-10 transition-all delay-300 ${
+          sobreSectionVisible ? "opacity-1" : "opacity-0"
+        }`}
         style={{
           backgroundBlendMode: "overlay",
           backgroundImage: `url(${sobrefoto})`,
