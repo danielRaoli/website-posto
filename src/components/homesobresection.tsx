@@ -9,7 +9,7 @@ export function HomeSobre() {
     <>
       <section
         ref={sobre}
-        className={`w-full bg-cover bg-no-repeat bg-fixed bg-center bg-[#000000b4] h-auto py-14 px-10 md:py-20 flex flex-col items-center gap-10 md:gap-10 transition-all delay-300 ${
+        className={`w-full bg-cover bg-no-repeat bg-fixed bg-center bg-[#000000b4] h-auto py-14 px-10 md:py-20 flex flex-col items-center gap-10 md:gap-10 transition-all duration-300 ${
           sobreSectionVisible ? "opacity-1" : "opacity-0"
         }`}
         style={{

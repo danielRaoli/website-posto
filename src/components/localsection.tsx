@@ -33,7 +33,7 @@ export function LocalSection() {
       <section
         id="local"
         ref={local}
-        className={`py-10 px-4 md:px-20 w-full flex flex-col items-center transition duration-300 delay-300  ${
+        className={`py-10 px-4 md:px-20 w-full flex flex-col items-center transition duration-300   ${
           localSectionVisible ? "opacity-1" : "opacity-0"
         }`}
       >
