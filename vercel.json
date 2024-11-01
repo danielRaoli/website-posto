@@ -1,12 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "destination": "/index.html"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/:path*"
     }
   ]
 }
