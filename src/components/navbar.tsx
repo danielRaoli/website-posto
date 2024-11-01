@@ -100,7 +100,7 @@ function Navbar() {
               <div className="flex flex-col gap-3 mt-10">
                 {links.map((link) => (
                   <Button className="text-yellow-300 font-semibold bg-blue-900">
-                    {link.label}
+                    <a href={link.path}>{link.label}</a>
                   </Button>
                 ))}
               </div>
