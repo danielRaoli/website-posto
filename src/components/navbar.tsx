@@ -47,7 +47,12 @@ function Navbar() {
   return (
     <header className="flex flex-col w-full h-auto bg-yellow-300 fixed top-0 z-10">
       <div className="h-auto w-full flex justify-between py-2 px-4 md:px-10 relative">
-        <img src={logo} alt="" className="h-[45px] w-auto" />
+        <img
+          src={logo}
+          alt="logo do posto"
+          className="h-[45px] w-auto"
+          loading="lazy"
+        />
         <NavigationMenu className="w-full">
           <NavigationMenuList className="gap-7">
             {links.map((link) =>

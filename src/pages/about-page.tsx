@@ -9,13 +9,39 @@ import { Button } from "@/components/ui/button";
 
 import logotipo from "../assets/logo-iargas.png";
 import ImagemPosto from "../assets/foto-pessoal.png";
+import { Helmet } from "react-helmet-async";
 
 function AboutPage() {
   return (
     <>
+      <Helmet>
+        <title>Home | Posto Iargas</title>
+        <meta
+          name="description"
+          content="Sobre o Posto Iargas, conheça nosso grupo."
+        />
+        <meta name="keywords" content="posto, sobre, conveniência" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="/" />
+
+        <meta property="og:title" content="About | Posto Iargas" />
+        <meta
+          property="og:description"
+          content="Bem vindo ao início de tudo, conheça o Grupo Iargas."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.grupoiargas.com.br/about"
+        />
+        <meta property="og:image" content="../assets/logo-iargas.png" />
+      </Helmet>
+
       <section className="flex flex-col gap-10 px-4 py-28  md:p-10 lg:px-40 lg:py-24">
         <div className="flex items-center justify-between">
-          <h2 className="lg:text-4xl text-2xl font-bold text-blue-900">Quem somos?</h2>
+          <h2 className="lg:text-4xl text-2xl font-bold text-blue-900">
+            Quem somos?
+          </h2>
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -89,24 +115,26 @@ function AboutPage() {
                 src={logotipo}
                 alt="Logo Posto de Gasolina"
                 className="w-[250px] lg:hidden"
+                loading="lazy"
               />
               <img
                 src={ImagemPosto}
                 alt="Imagem Posto de Gasolina"
                 className="w-[400px] rounded-md"
+                loading="lazy"
               />
 
               <p
                 style={{ textAlign: "justify" }}
                 className="text-sm font-medium max-w-[400px]"
               >
-                Conheça a Iargas! Com mais de 25 anos de experiência no
-                mercado de combustíveis, somos reconhecidos por nosso
-                compromisso com a excelência e dedicação ao cliente. Oferecemos
-                serviços de alta qualidade que têm conquistado a confiança de
-                milhares de clientes, que recomendam e aprovam a Iargas como uma
-                referência no setor. Nosso objetivo é superar suas expectativas
-                e proporcionar uma experiência de atendimento que você merece.
+                Conheça a Iargas! Com mais de 25 anos de experiência no mercado
+                de combustíveis, somos reconhecidos por nosso compromisso com a
+                excelência e dedicação ao cliente. Oferecemos serviços de alta
+                qualidade que têm conquistado a confiança de milhares de
+                clientes, que recomendam e aprovam a Iargas como uma referência
+                no setor. Nosso objetivo é superar suas expectativas e
+                proporcionar uma experiência de atendimento que você merece.
               </p>
             </div>
             <div className="flex flex-col items-center gap-4 mb-4">

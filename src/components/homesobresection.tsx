@@ -21,6 +21,7 @@ export function HomeSobre() {
           src={logo}
           alt="logo marca do posto iargas"
           className="object-cover max-h-[100px]"
+          loading="lazy"
         />
         <h2 className="text-white font-semibold rounded-sm text-center md:text-3xl md:w-[50%]">
           Descubra a trajetória de trabalho em equipe, conquista e perseverança

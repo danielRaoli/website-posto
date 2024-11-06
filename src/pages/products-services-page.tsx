@@ -11,10 +11,36 @@ import imagemLubrificante from "../assets/foto-lubrificantes.png";
 import imagemLavagemCarro from "../assets/foto-lavagem.png";
 import imagemConveniencia from "../assets/foto-conveniencia.jpeg";
 import imagemTrocaOleo from "../assets/foto-troca-oleo.jpg";
+import { Helmet } from "react-helmet-async";
 
 function ProductsAndServicesPage() {
   return (
     <>
+      <Helmet>
+        <title>Home | Posto Iargas</title>
+        <meta
+          name="description"
+          content="Conheça os serviços e produtos do grupo iargas"
+        />
+        <meta
+          name="keywords"
+          content="posto, produtos, conveniência, serviços"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="/" />
+
+        <meta property="og:title" content="Services | Posto Iargas" />
+        <meta
+          property="og:description"
+          content="Conheça os serviços e produtos do grupo iargas"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://www.grupoiargas.com.br/products-services"
+        />
+        <meta property="og:image" content="../assets/logo-iargas.png" />
+      </Helmet>
       <section className=" flex flex-col gap-10 px-4 py-28  md:p-10 lg:px-40 lg:py-24">
         <div className="flex items-center justify-between">
           <h2 className="lg:text-4xl text-sm font-bold text-blue-900">
@@ -52,6 +78,7 @@ function ProductsAndServicesPage() {
                 src={imagemGasolina}
                 alt="Imagem Bomba de Combustível"
                 className="mb-4 rounded-md lg:w-[500px] lg:h-[280px] shadow-lg"
+                loading="lazy"
               />
               <div>
                 <p className="text-md font-black text-blue-900">
@@ -72,6 +99,7 @@ function ProductsAndServicesPage() {
                   src={imagemLubrificante}
                   alt="Imagem Lubrificante"
                   className="rounded-md lg:w-[500px] lg:h-[280px] shadow-lg"
+                  loading="lazy"
                 />
                 <p className="font-medium text-xl">Lubrificantes</p>
               </div>
@@ -92,6 +120,7 @@ function ProductsAndServicesPage() {
                 src={imagemConveniencia}
                 alt="Imagem Conveniência"
                 className="rounded-md w-[400px] h-[250px] shadow-lg"
+                loading="lazy"
               />
               <p className="font-medium text-xl">Conveniência</p>
             </div>
@@ -100,6 +129,7 @@ function ProductsAndServicesPage() {
                 src={imagemTrocaOleo}
                 alt="Imagem Troca de óleo"
                 className="rounded-md w-[400px] h-[250px] shadow-lg"
+                loading="lazy"
               />
               <p className="font-medium text-xl">Troca de Óleo</p>
             </div>
@@ -108,6 +138,7 @@ function ProductsAndServicesPage() {
                 src={imagemLavagemCarro}
                 alt="Imagem Lavagem de Carro"
                 className="rounded-md w-[400px] h-[250px] shadow-lg"
+                loading="lazy"
               />
               <p className="font-medium text-xl">Lavagem de Carro</p>
             </div>

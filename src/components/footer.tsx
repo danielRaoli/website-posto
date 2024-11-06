@@ -15,24 +15,37 @@ function Footer() {
         src={logotipo}
         alt="Logotipo do Posto"
         className="mt-2 w-[200px] lg:w-[300px]"
+        loading="lazy"
       />
 
       <div className="flex flex-col gap-2 md:flex-row">
         <p className="font-black">ACESSO RÁPIDO</p>
         <div className="flex items-center gap-1 font-bold">
-          <img src={ArrowRight} alt="Ícone de seta para a direita" />
+          <img
+            src={ArrowRight}
+            alt="Ícone de seta para a direita"
+            loading="lazy"
+          />
           <a href="/" className="hover:translate-x-1 transition-all">
             Home
           </a>
         </div>
         <div className="flex items-center gap-1 font-bold">
-          <img src={ArrowRight} alt="Ícone de seta para a direita" />
+          <img
+            src={ArrowRight}
+            alt="Ícone de seta para a direita"
+            loading="lazy"
+          />
           <a href="/about" className="hover:translate-x-1 transition-all">
             Sobre Nós
           </a>
         </div>
         <div className="flex items-center gap-1 font-bold">
-          <img src={ArrowRight} alt="Ícone de seta para a direita" />
+          <img
+            loading="lazy"
+            src={ArrowRight}
+            alt="Ícone de seta para a direita"
+          />
           <a
             href="/products-services"
             className="hover:translate-x-1 transition-all"
@@ -45,11 +58,11 @@ function Footer() {
       <div className="flex flex-col gap-2 items-center md:flex-row">
         <p className="font-black">FALE CONOSCO</p>
         <div className="flex items-center gap-1 font-bold">
-          <img src={telephoneIcon} alt="Ícone telefone" />
+          <img loading="lazy" src={telephoneIcon} alt="Ícone telefone" />
           <p>(41) 3623-2259 | </p>
         </div>
         <div className="flex items-center gap-1 font-bold">
-          <img src={smartphoneIcon} alt="Ícone smartphone" />
+          <img loading="lazy" src={smartphoneIcon} alt="Ícone smartphone" />
           <p>(41) 98722-5498 |</p>
         </div>
         <div className="flex items-center gap-2">
@@ -57,13 +70,21 @@ function Footer() {
             href="https://www.instagram.com/iargas_posto_e_gas/"
             className="hover:scale-125 transition-all"
           >
-            <img src={logotipoInstagram} alt="Logotipo do Instagram" />
+            <img
+              loading="lazy"
+              src={logotipoInstagram}
+              alt="Logotipo do Instagram"
+            />
           </a>
           <a
             href="https://www.facebook.com/p/Posto-Iargas-100084880777464/?locale=pt_BR"
             className="hover:scale-125 transition-all"
           >
-            <img src={logotipoFacebook} alt="Logotipo do Facebook" />
+            <img
+              loading="lazy"
+              src={logotipoFacebook}
+              alt="Logotipo do Facebook"
+            />
           </a>
         </div>
       </div>

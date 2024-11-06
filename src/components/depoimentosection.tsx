@@ -76,8 +76,9 @@ export function DepoimentosSection() {
           <div className="w-[80%] md:w-[50%] h-auto relative md:-mt-40">
             <img
               src={image}
-              alt=""
+              alt="Imagem de cliente Abastecendo"
               className="w-full min-h-[300px] flex-shrink-0 object-cover rounded-sm"
+              loading="lazy"
             />
             <div className="flex gap-3 items-center justify-evenly bg-slate-300 h-[50px] w-auto p-3 rounded-tl-sm absolute bottom-0 right-0">
               <button
@@ -104,7 +105,7 @@ export function DepoimentosSection() {
             </div>
             <div className="flex flex-col items-center gap-3">
               <Avatar className="h-[60px] w-[60px]">
-                <AvatarImage src={avatar} className=" " />
+                <AvatarImage src={avatar} alt="foto de perfil do usuario" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               <span className="text-yellow-500 text-xl font-bold">{name}</span>

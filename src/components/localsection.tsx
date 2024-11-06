@@ -48,8 +48,9 @@ export function LocalSection() {
           <CarouselContent className="w-full h-[150px] md:h-[400px] md:w-[50%]">
             <CarouselItem className="w-full h-full flex-shrink-0">
               <img
+                loading="lazy"
                 src={postolocal2}
-                alt=""
+                alt="Foto do posto"
                 className="w-full h-full object-cover rounded-sm"
               />
             </CarouselItem>
@@ -70,8 +71,9 @@ export function LocalSection() {
             </CarouselItem>
             <CarouselItem className="w-full h-full flex-shrink-0">
               <img
+                loading="lazy"
                 src={postolocal}
-                alt=""
+                alt="Foto do posto mostrando o local ao redor"
                 className="w-full h-full object-cover rounded-sm"
               />
             </CarouselItem>
