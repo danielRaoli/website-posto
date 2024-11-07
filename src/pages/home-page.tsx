@@ -10,23 +10,29 @@ function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Home | Posto Iargas</title>
+        <title>Home | Posto Iargas, Abastecimento e Conveniência</title>
         <meta
           name="description"
-          content="Bem vindo ao início de tudo, conheça o grupo iargas."
+          content="Conheça os serviços e produtos do grupo Iargas, abastecimento convêniencia e muito mais"
         />
-        <meta name="keywords" content="posto, grupo, conveniência" />
+        <meta
+          name="keywords"
+          content="posto, produtos, conveniência, serviços"
+        />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/" />
+        <link rel="canonical" href="https://www.grupoiargas.com.br/" />
 
         <meta property="og:title" content="Home | Posto Iargas" />
         <meta
           property="og:description"
-          content="Bem vindo ao início de tudo, conheça o Grupo Iargas."
+          content="Conheça os serviços e produtos do grupo Iargas"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.grupoiargas.com.br/" />
-        <meta property="og:image" content="../assets/logo-iargas.png" />
+        <meta
+          property="og:image"
+          content="https://www.grupoiargas.com.br/src/assets/logo-iargas.png"
+        />
       </Helmet>
       <main className="w-full h-full mt-14">
         <BannerSection />

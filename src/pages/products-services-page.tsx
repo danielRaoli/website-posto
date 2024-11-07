@@ -17,17 +17,20 @@ function ProductsAndServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Home | Posto Iargas</title>
+        <title>Services | Serviços e produtos</title>
         <meta
           name="description"
-          content="Conheça os serviços e produtos do grupo iargas"
+          content="Conheça os serviços e produtos do posto iargas"
         />
         <meta
           name="keywords"
           content="posto, produtos, conveniência, serviços"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/" />
+        <link
+          rel="canonical"
+          href="https://www.grupoiargas.com.br/products-services"
+        />
 
         <meta property="og:title" content="Services | Posto Iargas" />
         <meta

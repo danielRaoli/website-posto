@@ -18,25 +18,27 @@ function AboutPage() {
         <title>Home | Posto Iargas</title>
         <meta
           name="description"
-          content="Sobre o Posto Iargas, conheça nosso grupo."
+          content="Conheça mais sobre a história do grupo iargas"
         />
-        <meta name="keywords" content="posto, sobre, conveniência" />
+        <meta name="keywords" content="Iargas, Objetivo, Valores, Serviços" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="/" />
+        <link rel="canonical" href="https://www.grupoiargas.com.br/" />
 
         <meta property="og:title" content="About | Posto Iargas" />
         <meta
           property="og:description"
-          content="Bem vindo ao início de tudo, conheça o Grupo Iargas."
+          content="Conheça os serviços e produtos do grupo Iargas"
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
           content="https://www.grupoiargas.com.br/about"
         />
-        <meta property="og:image" content="../assets/logo-iargas.png" />
+        <meta
+          property="og:image"
+          content="https://www.grupoiargas.com.br/src/assets/logo-iargas.png"
+        />
       </Helmet>
-
       <section className="flex flex-col gap-10 px-4 py-28  md:p-10 lg:px-40 lg:py-24">
         <div className="flex items-center justify-between">
           <h2 className="lg:text-4xl text-2xl font-bold text-blue-900">
